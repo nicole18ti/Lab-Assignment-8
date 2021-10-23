@@ -1,13 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package com.mycompany.week8_skeletoncode_lab;
 
-/**
- *
- * @author MoaathAlrajab
- */
+package com.mycompany.week8_skeletoncode_lab;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 public class BinarySearch {
 
     public static int runBinarySearchIteratively(
@@ -29,5 +24,34 @@ public class BinarySearch {
     }
     //ToDo 2: Call the above method and test the algorithm  
     // provide time and space analysis 
+    
+    public static void main(String args[]){
+        
+         BinarySearch binarySearch = new BinarySearch();
+         
+         int[] sortedArray = {
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            5,
+            6,
+            7,
+            8,
+            9,
+            9
+        };
+        int key = 5;
+        int low = 0;
+        int high = sortedArray.length - 1;
+        List < Integer > sortedList = Arrays.asList(0, 1, 2, 3, 4, 5, 5, 6, 7, 8, 9, 9);
+
+        int result = binarySearch.runBinarySearchIteratively(sortedArray, key, low, high);
+        System.out.println("runBinarySearchIteratively result -> " + result);
+    }
+    
+    // The time complexity is O(n)
 
 }

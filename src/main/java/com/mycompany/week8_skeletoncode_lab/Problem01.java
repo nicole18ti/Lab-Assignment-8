@@ -10,11 +10,34 @@ package com.mycompany.week8_skeletoncode_lab;
  */
 public class Problem01 {
     
-    public static long getSumOfPrimes(int n){
-    // Todo 04: Develop a method that returns the sum of the prime numbers between 1 and n
-    //          Test your solution
-    //          Analyze its space and time  
-    
+    static boolean checkPrime(int numberToCheck)
+    {
+        if(numberToCheck == 1) {
+            return false;
+        }
+        for (int i = 2; i*i <= numberToCheck; i++) {
+            if (numberToCheck % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
-    
+    static int primeSum(int l, int r)
+    {
+        int sum = 0;
+        for (int i = r; i >= l; i--) {
+ 
+            // Check for prime
+            boolean isPrime = checkPrime(i);
+            if (isPrime) {
+ 
+                // Sum the prime number
+                sum = sum + i;
+            }
+        }
+        return sum;
+    }
+    // Time Complexity is O(r x sqrt(N))
+   
 }
+
